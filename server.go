@@ -5,14 +5,13 @@ import (
 	"net/http"
 )
 
-
-func   Homehandler(w http.ResponseWriter, r *http.Request) {
+func Homehandler(w http.ResponseWriter, r *http.Request) {
 
 	fmt.Fprintf(w, "Hello Home")
 
 }
 
-func   Signuphandler(w http.ResponseWriter, r *http.Request) {
+func Signuphandler(w http.ResponseWriter, r *http.Request) {
 
 	fmt.Fprintf(w, "Signup Page")
 
@@ -20,12 +19,11 @@ func   Signuphandler(w http.ResponseWriter, r *http.Request) {
 
 func main() {
 
-    fmt.Println("main function running")
-	
-    http.HandleFunc("/home",Homehandler)
+	fmt.Println("main function running")
 
-	http.HandleFunc("/Signup",Signuphandler)
+	http.HandleFunc("/home", Homehandler)
 
+	http.HandleFunc("/Signup", Signuphandler)
 
-	http.ListenAndServe("9000",nil)
+	http.ListenAndServe(":9000", nil)
 }
